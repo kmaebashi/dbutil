@@ -4,6 +4,8 @@ Java(JDBC)向けのユーティリティライブラリです。現状で以下�
 + PreparedStatementで名前付きパラメタを使うNamedParameterPreparedStatementクラス。内部的に?を使ったSQLに変換します。
 + ResultSetをクラスにマッピングするResultSetMapperクラス。クラスの方には、フィールドごとにアノテーションを付けておきます。
 
+Java17 + PostgreSQL15.3で動作確認しています。
+
 ## NamedParameterPreparedStatementクラス
 JDBCでPreparedStatementを使う時は、プレースホルダには「?」しか使えず、何番目の「?」なのかを数えないといけませんが、
 「:PARAM_NAME」のようにコロンで始まる名前付きパラメタを使えるようにします。
