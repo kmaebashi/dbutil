@@ -5,11 +5,16 @@ Java(JDBC)向けのユーティリティライブラリです。現状で以下�
 + ResultSetをクラスにマッピングするResultSetMapperクラス。クラスの方には、フィールドごとにアノテーションを付けておきます。
 
 ## NamedParameterPreparedStatementクラス
+JDBCでPreparedStatementを使う時は、プレースホルダには「?」しか使えず、何番目の「?」なのかを数えないといけませんが、
+「:PARAM_NAME」のようにコロンで始まる名前付きパラメタを使えるようにします。
+C#あたりだと昔から使えますし、Spring FrameworkのNamedParameterJdbcTemplateと同様の機能です。
 
 
 ## ResultSetMapperクラス
-ResultSetをDTO(Data Transfer Object)となるクラスにマッピングします。
+JDBCにおいてDBからの検索結果を保持するResultSetの内容を、DTO(Data Transfer Object)となるクラスにマッピングします。
 DTOクラスには、テーブルの列名と対応付けるためにアノテーションを付けておきます。
+
+この機能はDBの検索結果からクラスへの一方通行のマッピングであり、(JPAとかのような)クラスからDBに書き込む機能はありません。
 ```
 import com.kmaebashi.dbutil.TableColumn;
 
