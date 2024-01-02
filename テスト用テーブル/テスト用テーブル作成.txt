@@ -1,0 +1,108 @@
+create database dbutiltestdb;
+
+create user dbutiltestuser
+password 'XXXXXX';
+
+create schema dbutiltest;
+
+grant usage on schema dbutiltest to dbutiltestuser;
+
+create table namedparametertest (
+  test_key varchar(32) not null primary key,
+  int_val integer,
+  real_val real,
+  bool_val bool,
+  str_val varchar(32),
+  date_val date,
+  timestamp_val timestamp
+);
+insert into namedparametertest (
+  test_key, int_val, real_val, bool_val, str_val, date_val, timestamp_val
+) values (
+  'selecttest01', 10, 10.5, true, 'abc', '2023-11-04', '2023-11-04 23:15:15'
+);
+insert into namedparametertest (
+  test_key, int_val, real_val, bool_val, str_val, date_val, timestamp_val
+) values (
+  'selecttest02', 20, 20.5, false, 'def', '2023-12-04', '2023-11-04 23:15:30'
+);
+
+create table namedparameterinserttest (
+  test_key varchar(32) not null primary key,
+  int_val integer,
+  real_val real,
+  bool_val bool,
+  str_val varchar(32),
+  date_val date,
+  timestamp_val timestamp
+);
+
+create table resultsetmappertest (
+  test_key varchar(32) not null primary key,
+  int_val integer,
+  real_val real,
+  boolean_val boolean,
+  char_val char(10),
+  varchar_val varchar(32),
+  text_val text,
+  timestamp_val timestamp,
+  date_val date
+);
+
+insert into resultsetmappertest (
+  test_key,
+  int_val,
+  real_val,
+  boolean_val,
+  char_val,
+  varchar_val,
+  text_val,
+  timestamp_val,
+  date_val
+) values (
+  'test01',
+  10,
+  10.5,
+  true,
+  'abc',
+  'varabc',
+  'text',
+  '2023-11-04 23:15:30',
+  '2023-11-05'
+);
+
+insert into resultsetmappertest (
+  test_key,
+  int_val,
+  real_val,
+  boolean_val,
+  char_val,
+  varchar_val,
+  text_val,
+  timestamp_val,
+  date_val
+) values (
+  'test02',
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null
+);
+
+
+create table resultsetmappertest2 (
+  test_key varchar(32) not null primary key,
+  numeric_val numeric(8, 4)
+);
+
+insert into resultsetmappertest2 (
+  test_key,
+  numeric_val
+) values (
+  'test01',
+  123.456
+);
