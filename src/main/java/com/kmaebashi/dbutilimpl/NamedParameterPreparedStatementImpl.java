@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Map;
 
-public class NamedParameterPreparedStatementImpl extends NamedParameterPreparedStatement {
+public class NamedParameterPreparedStatementImpl implements NamedParameterPreparedStatement {
     private PreparedStatement preparedStatement;
     private String[] paramNames;
 
