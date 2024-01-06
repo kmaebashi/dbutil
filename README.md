@@ -58,6 +58,7 @@ int result = npps.getPreparedStatement().executeUpdate();
 + LocalDate(java.sql.Dateに変換します)
 + java.sql.Timestamp
 + LocalDateTime(java.sql.Timestampに変換します)
+
 これ以外の型を設定した場合、UnsupportedTypeExceptionがスローされます。必要に応じて書き足してください。
 
 ## ResultSetMapperクラス
